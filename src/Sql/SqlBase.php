@@ -232,6 +232,16 @@
             return $this->_database;
         }
 
+        public function getActualUser ()
+        {
+            return sprintf("'%s'@'%s'", $this->_username, $this->_host);
+        }
+
+        public function getUserGrants ($user = null, $host = null)
+        {
+            return $this->fetchArray($this->queryMysql("SELECT PRIVILEGE_TYPE FROM information_schema.user_privileges WHERE GRANTEE LIKE \"" . $this->getActualUser() . "\""));
+        }
+
         public function getAllTables ()
         {
             return array_keys(self::$cache[$this->getActualDBName()]["TABLES"]);
