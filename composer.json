@@ -1,0 +1,26 @@
+{
+  "name": "firegore2/mysql",
+  "description": "mysql oop",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pedro L.E.",
+      "email": "firegore2@gmail.com"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^2.4"
+  },
+  "require-dev": {
+    "kint-php/kint": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Firegore\\Mysql\\": "src/"
+    },
+    "files": [
+      "src/Start.php"
+    ]
+  }
+}
