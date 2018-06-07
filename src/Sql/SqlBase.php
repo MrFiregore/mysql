@@ -389,6 +389,12 @@
                 $query_array['COLUMN_DEFAULT'] : (($query_array['IS_NULLABLE'] == "YES") ? "NULL" : "");
         }
 
+        public function issetDB ($db)
+        {
+            return isset(self::$cache[$db]);
+
+        }
+
         public function issetTable ($table)
         {
             return isset(self::$cache[$this->getActualDBName()]["TABLES"][$table]);
